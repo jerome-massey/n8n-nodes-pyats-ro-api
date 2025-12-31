@@ -57,15 +57,10 @@ This node supports the following operations:
   - Support for multiple devices and commands
   - Pipe filtering (include, exclude, begin, section)
   - Configurable timeout
-  - Optional jumphost support
 
 ### Health Resource
 
 - **Check**: Check API health and version
-
-### Jumphost Resource
-
-- **Test Connection**: Test SSH jumphost connectivity before executing commands
 
 ### Info Resource
 
@@ -130,19 +125,6 @@ Execute commands on multiple devices with output filtering:
    - Pipe Option: `Section`
    - Pattern: `interface`
 
-### Example: Testing Jumphost
-
-Before executing commands through a jumphost:
-
-1. Select **Jumphost** as the resource
-2. Choose **Test Connection** as the operation
-3. Enter jumphost details:
-   - Host: `jumphost.example.com`
-   - Username: `jumpuser`
-   - SSH Key Path: `/root/.ssh/jumphost_key`
-   - Port: `22`
-4. Execute to verify connectivity
-
 ### Supported Device OS Types
 
 - Cisco IOS
@@ -168,7 +150,6 @@ See [CHANGELOG.md](CHANGELOG.md) for a complete version history.
 - Support for multiple devices and commands
 - Pipe filtering capabilities (include, exclude, begin, section)
 - Health check endpoint
-- Jumphost connectivity testing
 - Support for Cisco IOS, IOS-XE, IOS-XR, NX-OS, and ASA
 
 ## Contributing
@@ -201,5 +182,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - Support for multiple devices and commands
 - Pipe filtering capabilities
 - Health check endpoint
-- Jumphost testing
 - Support for Cisco IOS, IOS-XE, IOS-XR, NX-OS, and ASA

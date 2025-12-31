@@ -254,19 +254,6 @@ export const executeCommandDescription: INodeProperties[] = [
 					},
 				},
 			},
-			{
-				displayName: 'Use Jumphost',
-				name: 'use_jumphost',
-				type: 'boolean',
-				default: false,
-				description: 'Whether to use global jumphost configuration (requires environment variables)',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'use_jumphost',
-					},
-				},
-			},
 		],
 	},
 ];

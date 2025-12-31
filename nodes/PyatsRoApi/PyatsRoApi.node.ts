@@ -1,7 +1,6 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
 import { commandDescription } from './resources/command';
 import { healthDescription } from './resources/health';
-import { jumphostDescription } from './resources/jumphost';
 import { infoDescription } from './resources/info';
 
 export class PyatsRoApi implements INodeType {
@@ -50,11 +49,6 @@ export class PyatsRoApi implements INodeType {
 						description: 'Check API health',
 					},
 					{
-						name: 'Jumphost',
-						value: 'jumphost',
-						description: 'Test jumphost connectivity',
-					},
-					{
 						name: 'Info',
 						value: 'info',
 						description: 'Get API information',
@@ -64,7 +58,6 @@ export class PyatsRoApi implements INodeType {
 			},
 			...commandDescription,
 			...healthDescription,
-			...jumphostDescription,
 			...infoDescription,
 		],
 	};

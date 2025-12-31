@@ -165,7 +165,7 @@ Open http://localhost:5678 in your browser.
 
 ### 5. Configure the Node
 
-1. Select a **Resource** (Command, Health, Info, or Jumphost)
+1. Select a **Resource** (Command, Health, or Info)
 2. Select an **Operation** for that resource
 3. Fill in any required parameters
 4. Click **"Execute Node"** to test
@@ -191,8 +191,7 @@ n8n-nodes-pyats-ro-api/
 │       └── resources/               # Resource operations
 │           ├── command/
 │           ├── health/
-│           ├── info/
-│           └── jumphost/
+│           └── info/
 ├── dist/                            # Compiled output (gitignored)
 ├── package.json                     # Node package configuration
 ├── tsconfig.json                    # TypeScript configuration
