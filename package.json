@@ -1,14 +1,14 @@
 {
   "name": "n8n-nodes-pyats-ro-api",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n node for executing show commands on network devices via PyATS/Unicon API",
   "license": "MIT",
-  "homepage": "",
-  "keywords": ["n8n-community-node-package"],
-  "author": { "name": "", "email": "" },
+  "homepage": "https://github.com/JeromeMassey/n8n-nodes-pyats-ro-api",
+  "keywords": ["n8n-community-node-package", "n8n", "pyats", "network", "automation", "cisco"],
+  "author": { "name": "Jerome Massey", "email": "jerome@masseyhouse.org" },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/JeromeMassey/n8n-nodes-pyats-ro-api.git"
   },
   "scripts": {
     "build": "n8n-node build",
@@ -23,7 +23,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "strict": true,
-    "credentials": [],
+    "credentials": ["dist/credentials/PyatsRoApi.credentials.js"],
     "nodes": ["dist/nodes/PyatsRoApi/PyatsRoApi.node.js"]
   },
   "devDependencies": {

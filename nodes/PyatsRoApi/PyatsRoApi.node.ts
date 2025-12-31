@@ -1,25 +1,32 @@
 import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { userDescription } from './resources/user';
-import { companyDescription } from './resources/company';
+import { commandDescription } from './resources/command';
+import { healthDescription } from './resources/health';
+import { jumphostDescription } from './resources/jumphost';
+import { infoDescription } from './resources/info';
 
 export class PyatsRoApi implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Pyats Ro Api',
+		displayName: 'PyATS Show Command API',
 		name: 'pyatsRoApi',
 		icon: { light: 'file:pyatsRoApi.svg', dark: 'file:pyatsRoApi.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with the Pyats Ro Api API',
+		description: 'Execute show commands on network devices via PyATS/Unicon',
 		defaults: {
-			name: 'Pyats Ro Api',
+			name: 'PyATS Show Command API',
 		},
 		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
-		credentials: [],
+		credentials: [
+			{
+				name: 'pyatsRoApi',
+				required: true,
+			},
+		],
 		requestDefaults: {
-			baseURL: 'http://pyats-ro-api',
+			baseURL: '={{$credentials.baseUrl}}',
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
@@ -33,18 +40,32 @@ export class PyatsRoApi implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
+						name: 'Command',
+						value: 'command',
+						description: 'Execute show commands on devices',
 					},
 					{
-						name: 'Company',
-						value: 'company',
+						name: 'Health',
+						value: 'health',
+						description: 'Check API health',
+					},
+					{
+						name: 'Jumphost',
+						value: 'jumphost',
+						description: 'Test jumphost connectivity',
+					},
+					{
+						name: 'Info',
+						value: 'info',
+						description: 'Get API information',
 					},
 				],
-				default: 'user',
+				default: 'command',
 			},
-			...userDescription,
-			...companyDescription,
+			...commandDescription,
+			...healthDescription,
+			...jumphostDescription,
+			...infoDescription,
 		],
 	};
 }

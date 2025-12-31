@@ -2,17 +2,18 @@
 	"node": "n8n-nodes-pyats-ro-api",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Development", "Developer Tools"],
+	"categories": ["Development", "Developer Tools", "Network & Security"],
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://github.com/org/repo?tab=readme-ov-file#credentials"
+				"url": "https://github.com/JeromeMassey/n8n-nodes-pyats-ro-api#credentials"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/org/repo?tab=readme-ov-file"
+				"url": "https://github.com/JeromeMassey/n8n-nodes-pyats-ro-api"
 			}
 		]
-	}
+	},
+	"alias": ["PyATS", "Network Automation", "Cisco", "Show Commands"]
 }
